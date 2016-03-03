@@ -5,6 +5,7 @@ import android.opengl.GLSurfaceView;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 import android.opengl.GLU;
+import java.lang.Math;
 /**
  * Created by ander on 2016/03/02.
  */
@@ -21,7 +22,9 @@ public class MyRenderer implements GLSurfaceView.Renderer {
         gl.glTranslatef(0.0f, -0.0f, -3f);
 
         f=f+0.1f;
-        gl.glRotatef(30f, f, 1, 0);
+        float fSin=(float)Math.sin(f);
+        float fCos=(float)Math.cos(f);
+        gl.glRotatef(30f, fCos, fSin, 0);
         cube.draw(gl);
 
     }
