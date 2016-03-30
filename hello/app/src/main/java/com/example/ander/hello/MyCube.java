@@ -9,8 +9,36 @@ import javax.microedition.khronos.opengles.GL10;
  */
 public class MyCube {
     private final FloatBuffer mVertexBuffer;
-    public MyCube(){ float vertices[] = {  -0.5f, -0.5f, 0.5f, 0.5f, -0.5f, 0.5f, -0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f,  -0.5f, -0.5f, -0.5f, 0.5f, -0.5f, -0.5f, -0.5f, 0.5f, -0.5f, 0.5f, 0.5f, -0.5f,  -0.5f, -0.5f, 0.5f, -0.5f, -0.5f, -0.5f, -0.5f, 0.5f, 0.5f, -0.5f, 0.5f, -0.5f,  0.5f, -0.5f, 0.5f, 0.5f, -0.5f, -0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, -0.5f,  -0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, -0.5f, 0.5f, -0.5f, 0.5f, 0.5f, -0.5f,  -0.5f, -0.5f, 0.5f, 0.5f, -0.5f, 0.5f, -0.5f, -0.5f, -0.5f, 0.5f, -0.5f, -0.5f};
-            ByteBuffer vbb = ByteBuffer.allocateDirect(vertices.length * 4);
+    public MyCube(){
+
+        float vertices[] = {
+                -0.5f,	-0.5f,	0.5f,
+                0.5f,	-0.5f,	0.5f,
+                -0.5f,	0.5f,	0.5f,
+                0.5f,	0.5f,	0.5f,
+                -0.5f,	-0.5f,	-0.5f,
+                0.5f,	-0.5f,	-0.5f,
+                -0.5f,	0.5f,	-0.5f,
+                0.5f,	0.5f,	-0.5f,
+                -0.5f,	-0.5f,	0.5f,
+                -0.5f,	-0.5f,	-0.5f,
+                -0.5f,	0.5f,	0.5f,
+                -0.5f,	0.5f,	-0.5f,
+                0.5f,	-0.5f,	0.5f,
+                0.5f,	-0.5f,	-0.5f,
+                0.5f,	0.5f,	0.5f,
+                0.5f,	0.5f,	-0.5f,
+                -0.5f,	0.5f,	0.5f,
+                0.5f,	0.5f,	0.5f,
+                -0.5f,	0.5f,	-0.5f,
+                0.5f,	0.5f,	-0.5f,
+                -0.5f,	-0.5f,	0.5f,
+                0.5f,	-0.5f,	0.5f,
+                -0.5f,	-0.5f,	-0.5f,
+                0.5f,	-0.5f,	-0.5f
+        };
+
+        ByteBuffer vbb = ByteBuffer.allocateDirect(vertices.length * 4);
         vbb.order(ByteOrder.nativeOrder());
         mVertexBuffer = vbb.asFloatBuffer();
         mVertexBuffer.put(vertices);
@@ -19,7 +47,7 @@ public class MyCube {
         gl.glVertexPointer(3, GL10.GL_FLOAT, 0, mVertexBuffer);
         // Front gl.glNormal3f(0, 0, 1.0f);
         gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, 4);
-        // Back gl.glNormal3f(0, 0, -1.0f);
+  /*      // Back gl.glNormal3f(0, 0, -1.0f);
         gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 4, 4);
         // Left gl.glNormal3f(-1.0f, 0, 0);
         gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 8, 4);
@@ -29,5 +57,5 @@ public class MyCube {
         gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 16, 4);
         // Right gl.glNormal3f(0, -1.0f, 0);
         gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 20, 4);
-    }
+*/    }
 }
